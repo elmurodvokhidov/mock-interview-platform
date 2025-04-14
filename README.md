@@ -1,8 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Mock Interview Platform
 
-## Getting Started
+Welcome to the **Mock Interview Platform**! 🎤💼 This is a **Next.js application** built to help users level up their interview skills by simulating real-world interview experiences. Get ready to ace your interviews! 💪✨
 
-First, run the development server:
+## 🌟 Features
+
+- 🧑‍💻 **Interactive Mock Interviews**: Practice interviews in a realistic environment.
+- 🛠️ **Customizable Interview Types**: Choose from technical, behavioral, or custom formats.
+- ⚡ **Real-Time Feedback**: Get instant scoring and actionable feedback after interviews.
+- 🎨 **User-Friendly Interface**: Designed to be intuitive and easy to use for everyone.
+- 🚀 **Next.js Optimizations**: Enjoy blazing-fast performance and modern web features.
+
+## 🛠️ Getting Started
+
+Follow these steps to run the project locally and start your journey! 🏁
+
+1. Clone the repository. 🖥️
+2. Install dependencies. 📦
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +28,16 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open your browser and visit [http://localhost:3000](http://localhost:3000). 🌐
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the main page by modifying `app/page.tsx`. Changes will appear instantly! 🔄✨
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Credits 🙌
 
-## Learn More
+A heartfelt thank you to [Adrian Hajdin](https://github.com/adrianhajdin) for inspiring and guiding us in the creation of this fantastic and fun project!
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Learn More
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Curious to learn more about the technologies we use? Dive into these resources:
+- 📖 [Next.js Documentation](https://nextjs.org/docs): Explore all the features and APIs of Next.js.
+- 🧑‍🏫 [Learn Next.js](https://nextjs.org/learn): An interactive tutorial to get you started.
