@@ -22,6 +22,8 @@ export default function Agent({
     userName,
     userId,
     type,
+    interviewId,
+    questions,
 }: AgentProps) {
     const router = useRouter();
     const [isSpeaking, setIsSpeaking] = useState(false);
@@ -62,18 +64,36 @@ export default function Agent({
         }
     }, []);
 
+    const handleGenerateFeedback = async (messages: SavedMessage[]) => {
+        console.log(true);
+    };
+
     useEffect(() => {
-        if (callStatus === CallStatus.FINISHED) router.push("/");
+        if (callStatus === CallStatus.FINISHED) {
+            if (type === "generate") {
+                router.push("/");
+            } else {
+                handleGenerateFeedback(messages);
+            }
+        }
     }, [messages, callStatus, type, userId]);
 
     const handleCall = async () => {
         setCallStatus(CallStatus.CONNECTING);
-        await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
-            variableValues: {
-                username: userName,
-                userid: userId,
+        if (type === "generate") {
+            await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
+                variableValues: {
+                    username: userName,
+                    userid: userId,
+                }
+            });
+        } else {
+            let formattedQuestions = "";
+
+            if (questions) {
+                formattedQuestions = questions.map((question: string) => `- ${question}`).join("\n");
             }
-        });
+        }
     }
 
     const handleDisconnect = async () => {
