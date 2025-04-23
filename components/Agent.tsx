@@ -1,5 +1,6 @@
 "use client";
 
+import { interviewer } from "@/constants";
 import { cn } from "@/lib/utils";
 import { vapi } from "@/lib/vapi.sdk";
 import Image from "next/image";
@@ -80,26 +81,34 @@ export default function Agent({
 
     const handleCall = async () => {
         setCallStatus(CallStatus.CONNECTING);
+
         if (type === "generate") {
             await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
                 variableValues: {
                     username: userName,
                     userid: userId,
-                }
+                },
             });
         } else {
             let formattedQuestions = "";
-
             if (questions) {
-                formattedQuestions = questions.map((question: string) => `- ${question}`).join("\n");
+                formattedQuestions = questions
+                    .map((question) => `- ${question}`)
+                    .join("\n");
             }
+
+            await vapi.start(interviewer, {
+                variableValues: {
+                    questions: formattedQuestions,
+                },
+            });
         }
-    }
+    };
 
     const handleDisconnect = async () => {
         setCallStatus(CallStatus.FINISHED);
         vapi.stop();
-    }
+    };
 
     const latestMessage = messages[messages.length - 1]?.content;
     const isCallInactiveOrFinished = callStatus === CallStatus.INACTIVE || callStatus === CallStatus.FINISHED;
